@@ -15,7 +15,7 @@ module.exports = class BetterTwitterEmbeds extends Plugin {
 
     inject('bte-embed', Embed.prototype, 'render', function (_, res) {
       const { embed } = this.props;
-      if (embed.footer?.text === 'Twitter' && embed.url?.startsWith('https://twitter.com') && embed.rawTitle) {
+      if (embed.footer?.text === 'Twitter' && embed.url?.startsWith('https://twitter.com') && !embed.rawTitle) {
         return React.createElement(TwitterEmbed, {
           childrenImages: this.renderMedia(),
           embed
