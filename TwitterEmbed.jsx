@@ -6,6 +6,7 @@
 const { get } = require('powercord/http');
 const { React } = require('powercord/webpack');
 
+let gid = null;
 const cache = {};
 const DEFAULT_ACCOUNT_STATUS = {
   verified: false,
@@ -14,16 +15,21 @@ const DEFAULT_ACCOUNT_STATUS = {
 
 const TWITTER_GQL_URL = (screen) => `https://twitter.com/i/api/graphql/jMaTS-_Ea8vh9rpKggJbCQ/UserByScreenName?variables=%7B%22screen_name%22%3A%22${screen}%22%2C%22withHighlightedLabel%22%3Atrue%7D`;
 const TWITTER_BEARER = 'AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA';
-const TWITTER_GUEST = '1321481778461368321';
 
 function fetchBadges (screenName) {
   if (!cache[screenName]) {
     cache[screenName] = new Promise(async (resolve) => {
       try {
+        if (!gid) {
+          const { body: twh } = await get('https://twitter.com');
+          [ , gid ] = twh.toString().match(/document\.cookie = decodeURIComponent\("gt=(\d+)/);
+          setTimeout(() => (gid = null), 3600e3 * 2);
+        }
+
         // eslint-disable-next-line new-cap
         const { body: { data: { user } } } = await get(TWITTER_GQL_URL(screenName))
           .set('x-csrf-token', 'a')
-          .set('x-guest-token', TWITTER_GUEST)
+          .set('x-guest-token', gid)
           .set('authorization', `Bearer ${TWITTER_BEARER}`);
 
         resolve({
