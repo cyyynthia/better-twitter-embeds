@@ -1,0 +1,7 @@
+{
+  "name": "Better Twitter Embeds",
+  "version": "1.0.0",
+  "description": "Makes Twitter embeds look better by replacing the classic Discord look of embeds and using a custom element which roughly matches Twitter display guidelines. Also shows additional details such as the Verified tickmark and state affiliation.",
+  "author": "Bowser65",
+  "license": "OSL-3.0"
+}

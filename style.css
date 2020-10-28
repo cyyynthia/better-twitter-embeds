@@ -1,0 +1,168 @@
+/*
+ * Copyright (c) 2020 Bowser65
+ * Licensed under the Open Software License version 3.0
+ */
+
+/* Basics */
+.bte-embed {
+  padding: 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Helvetica Neue LT, Helvetica Neue, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+/* Tweets */
+.bte-embed.tweet {
+  width: 400px;
+}
+
+.bte-embed.tweet .bte-embed-header {
+  display: flex;
+  align-content: center;
+  margin-bottom: 8px;
+}
+
+.bte-embed.tweet .bte-embed-header img {
+  width: 50px;
+  height: 50px;
+  margin-top: -5px;
+  margin-left: -5px;
+  margin-bottom: -5px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.bte-embed.tweet .bte-embed-header .bte-embed-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.bte-embed.tweet .bte-embed-header .bte-embed-user .display {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.bte-embed.tweet .bte-embed-header .bte-embed-user .display .bte-twitter-verified {
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+}
+
+.bte-embed.tweet .bte-embed-header .bte-embed-user .screen {
+  color: #657786;
+}
+
+.bte-embed.tweet .bte-embed-header .bte-twitter-logo {
+  width: 44px;
+  height: 44px;
+  margin-top: -5px;
+  margin-right: -5px;
+  margin-bottom: -5px;
+  margin-left: auto;
+}
+
+.bte-embed.tweet .bte-embed-affiliation {
+  display: flex;
+  align-items: center;
+  color: #657786;
+  margin-top: 12px;
+}
+
+.bte-embed.tweet .bte-embed-affiliation img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.bte-embed.tweet .bte-embed-affiliation a {
+  color: inherit;
+}
+
+.bte-embed.tweet .bte-embed-affiliation a:hover {
+  text-decoration: underline;
+}
+
+.bte-embed.tweet .bte-embed-content {
+  margin: 24px 0;
+  white-space: pre-wrap;
+}
+
+.bte-embed.tweet .bte-embed-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .reply,
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .retweet,
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .like {
+  display: flex;
+  align-items: center;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .retweet,
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .like {
+  margin-left: 24px;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .reply,
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .retweet,
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .like {
+  transition: color .15s;
+  cursor: pointer;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .reply:hover {
+  color: #1ea0f0;
+}
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .retweet:hover {
+  color: #17bf63;
+}
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons .like:hover {
+  color: #e0245e;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons span {
+  margin-left: 10px;
+}
+
+.bte-embed.tweet .bte-embed-footer .bte-embed-buttons a {
+  color: inherit;
+}
+
+/* Themes */
+.theme-light .bte-embed {
+  border: 1px #cecece solid;
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-light .bte-embed.tweet .bte-embed-header .bte-embed-user .display .bte-twitter-verified,
+.theme-light .bte-embed.tweet .bte-embed-header .bte-twitter-logo {
+  color: #1da1f2;
+}
+
+.theme-dark .bte-embed {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-dark .bte-embed.tweet .bte-embed-header .bte-embed-user .display .bte-twitter-verified,
+.theme-dark .bte-embed.tweet .bte-embed-header .bte-twitter-logo {
+  color: #fff;
+}
